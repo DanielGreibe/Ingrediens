@@ -4,8 +4,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.QueryParam;
 
-@Path("hello2")
-public class Ingredients {
+@Path("ingrediens")
+public class IngredientService {
 	
 	@POST
 	public String createIngredientForm(@FormParam("name") String name, @FormParam("id") String id ,@FormParam("amount") String amount) {

@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="jquery-3.3.1.js"> </script>
+<script src="../jquery-3.3.1.js"> </script>
 <script>
 $(function() { // Sikrer sig at dokumentet er indlæst, 
 			   // før click handlers håndteres
 	$('#button').click(function() { //Sætter en click handler på knappen
 			$.ajax({				//Indleder et asynkront ajax kald
-				data: $('#input').val(),
-				contentType: 'text/plain',
-				url : 'rest/hello',	//specificerer endpointet
-				type : 'POST',	//Typen af HTTP requestet (GET er default)
+				url : '../rest/hello',	//specificerer endpointet
+				type : 'GET',	//Typen af HTTP requestet (GET er default)
 			success : function(data){//Funktion der skal udføres når data er hentet
 				$('#placeholder').html(data); //Manipulerer #mydiv.
 				} 
@@ -19,6 +17,7 @@ $(function() { // Sikrer sig at dokumentet er indlæst,
 	});
 });
 </script>
+
 
 <meta charset="UTF-8">
 <title>Insert title here</title>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<script src="jquery-3.3.1.js"> </script>
+<script src="../jquery-3.3.1.js"> </script>
 <script>
 $(function() {
 	
@@ -12,25 +12,18 @@ $(function() {
 	// før click handlers håndteres
 	$('#submit').click(function() {
 		
-		var name = $('#name').val();
-		var id = $('#id').val();
-		var amount = $('#amount').val();
-		
 		//Sætter en click handler på knappen
 			$.ajax({				//Indleder et asynkront ajax kald
 				data: {
-					name: name,
-					id: id,
-					amount: amount
+					name: $('#name').val(),
+					id: $('#id').val(),
+					amount: $('#amount').val()
 				},
 				contentType: 'text/plain',
-				url : 'rest/hello2/' + id + '/' + name + '/' + amount,	//specificerer endpointet
-				type : 'POST',	//Typen af HTTP requestet (GET er default)
-			success : function(data){//Funktion der skal udføres når data er hentet
-				alert(name);
-				alert(id);
-				alert(amount);
-				$('#placeholder').html(data); //Manipulerer #mydiv.
+				url : '../rest/ingrediens',	
+				type : 'POST',
+			success : function(data){
+				$('#placeholder').html(data);
 				} 
 			});
 			return false; //for at undgå at knappen poster data (default behavior).

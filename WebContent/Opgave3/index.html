@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../jquery-3.3.1.js"> </script>
+<script>
+$(function() { 
+	$('#button').click(function() {
+			$.ajax({
+				data: $('#input').val(),
+				contentType : 'text/plain',
+				url : '../rest/hello',	
+				type : 'POST',
+			success : function(data){
+				$('#placeholder').html(data); 
+				} 
+			});
+			return false; 
+	});
+});
+</script>
+
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<input type = "text" id = "input">
+<input type = "button" id = "button">
+
+<div id = "placeholder">
+Placeholder Text
+</div>
+
+</body>
+</html>

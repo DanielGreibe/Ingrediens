@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="../jquery-3.3.1.js"> </script>
+<script>
+$(function() {
+	
+	// Sikrer sig at dokumentet er indlæst, 
+	// før click handlers håndteres
+	$('#submit').click(function() {
+		
+		var name = $('#name').val();
+		var id = $('#id').val();
+		var amount = $('#amount').val();
+		
+		//Sætter en click handler på knappen
+			$.ajax({				//Indleder et asynkront ajax kald
+				contentType: 'text/plain',
+				url : '../rest/hello2/' + id + '/' + name + '/' + amount,	
+				type : 'POST',
+			success : function(data){
+				$('#placeholder').html(data);
+				} 
+			});
+			return false; //for at undgå at knappen poster data (default behavior).
+	});
+});
+</script>
+
+</head>
+<body>
+
+
+<form >
+<h1> OPRET INGREDIENS SIDE</h1> <br><br><br>
+
+Name
+<input type="text" name="name" id = "name">
+<br>
+
+ID
+<input type="text" name="id" id = "id">
+<br>
+
+Amount
+<input type="text" name="amount" id = "amount">
+<br>
+
+<input type="submit" name="submit" id = "submit">
+
+<div id = "placeholder">
+Placeholder Text
+</div>
+</form>
+</body>
+</html>
