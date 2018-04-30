@@ -20,7 +20,7 @@ $(function() {
 					amount: $('#amount').val()
 				},
 				contentType: 'text/plain',
-				url : '../rest/ingrediens',	
+				url : '../rest/createIngrediens',	
 				type : 'POST',
 			success : function(data){
 				$('#placeholder').html(data);

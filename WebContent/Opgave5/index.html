@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="../jquery.serialize-object.js"> </script>
-<script src="../jquery-3.3.1.js"> </script>
 
-<script>
-//Serializer objektet fra ingredientform med JSON.
-$('#ingredientform').serializeJSON();
+<script type="text/javascript" src="../jquery-3.3.1.js"> </script>
+<script type="text/javascript" src="../serialization.js"> </script>
+<script type="text/javascript" src="CRUDingrediens.js"></script>
 
-</script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
+<form id = "ingredientform">
+<h1> Opret Ingrediens med Ajax</h1> <br><br><br>
 
+
+ID
+<input type="text" name="id" id = "id">
+<br>
+
+Name
+<input type="text" name="name" id = "name">
+<br>
+
+Amount
+<input type="text" name="amount" id = "amount">
+<br>
+
+<input type="submit" name="submit" id = "submit">
+
+<div id = "placeholder">
+Placeholder Text
+</div>
+</form>
 
 </body>
 </html>

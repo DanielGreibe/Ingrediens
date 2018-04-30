@@ -4,7 +4,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.QueryParam;
 
-@Path("ingrediens")
+@Path("createIngrediens")
 public class IngredientService {
 	
 	@POST

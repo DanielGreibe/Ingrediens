@@ -19,7 +19,7 @@ $(function() {
 		//Sætter en click handler på knappen
 			$.ajax({				//Indleder et asynkront ajax kald
 				contentType: 'text/plain',
-				url : '../rest/hello2/' + id + '/' + name + '/' + amount,	
+				url : '../rest/createIngrediens/' + id + '/' + name + '/' + amount,	
 				type : 'POST',
 			success : function(data){
 				$('#placeholder').html(data);

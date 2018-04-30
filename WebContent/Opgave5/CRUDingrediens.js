@@ -1,25 +1,45 @@
 /* Implement ajax call to rest Service */
 $(document).ready(function(){
-    loadIngredients();
+//    loadIngredients();
+	$('#submit').click(function()
+			{
+			loadIngredient(1);
+			createIngredient();
+			return false;
+			});
+	
 })
-
+function loadIngredient(id) {
+	$.ajax({
+		url: '../rest/ingredients/read/' + id,
+		type: 'GET',
+		succes : function(data)
+		{
+			$('#placeholder').html(data);
+			alert("Ingrediensen blev læst");
+		}
+	});
+}
 
 function createIngredient() {
 	event.preventDefault();
-	var name = $('#name').val();
-	var id = $('#id').val();
-	var amount = $('#amount').val();
+
+	//Serialize userform
+	var form = $('#ingredientform');
+	var formSerialized = form.serializeJSON();
+	var formStringified = JSON.stringify(formSerialized);
+	alert(formStringified);
 	
 	//TODO make ajax call!	
-	$.ajax({				//Indleder et asynkront ajax kald
-		contentType: "application/json",
-		url : '../rest/ingredients',
-		type : 'POST',
-		success : function(data)
-		{
-			$('#placeholder').html(data);
-		} 
-	});
+		$.ajax({
+			data: formStringified,
+			contentType : 'application/json',
+			url : '../rest/ingredients/create',	
+			type : 'POST',
+		success : function(data){
+			alert("Call succeeded");
+			} 
+		});
 
     //Hint: Remember to reload ingredientlist
 }
