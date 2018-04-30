@@ -4,7 +4,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.QueryParam;
 
-@Path("ingredients")
+@Path("hello2")
 public class Ingredients {
 	
 	@POST
@@ -19,9 +19,9 @@ public class Ingredients {
 	@POST
 	@Path("{id}/{name}/{amount}")
 	public String createIngredientPost(@PathParam("name") String name, @PathParam("id") String id ,@PathParam("amount") String amount) {
-		return "You have made a new ingredient:" + "\n"
-				+ "The name is: " + name + "\n"
-				+ "The ID is: " + id  + "\n"
+		return "You have made a new ingredient:" + "<br>"
+				+ "The name is: " + name + "<br>"
+				+ "The ID is: " + id  + "<br>"
 				+ "The amount is: " + amount;
 		
 	}
