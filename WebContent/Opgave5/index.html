@@ -14,7 +14,6 @@
 <form id = "ingredientform">
 <h1> Opret Ingrediens med Ajax</h1> <br><br><br>
 
-
 ID
 <input type="text" name="id" id = "id">
 <br>
@@ -27,12 +26,23 @@ Amount
 <input type="text" name="amount" id = "amount">
 <br>
 
-<input type="submit" name="submit" id = "submit">
+<input type="button" name="createIngredientButton" id = "createIngredientButton" value = "Opret ingrediens">
 
 <div id = "placeholder">
 Placeholder Text
 </div>
-</form>
 
+
+</form>
+<h3> Indlæs en ingrediens</h3>
+<input type = "text" name = "ingredientID" id = "ingredientID" placeholder = "Indlæs Ingrediens ID">
+<input type = "button" name = "loadIngredient" id = "readIngredientButton" value = "Indlæs ingrediens">
+
+<h3> Slet en ingrediens</h3>
+<input type = "text" name = "ingredientID" id = "deleteIngredientID" placeholder = "Skriv Ingrediens ID'et">
+<input type = "button" name = "loadIngredient" id = "deleteIngredientButton" value = "Slet ingrediens">
+
+<h3> Indlæs alle ingredienser</h3>
+<input type = "button" name = "loadIngredient" id = "readAllIngredientsButton" value = "Indlæs alle ingredienser">
 </body>
 </html>
